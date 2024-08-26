@@ -1,0 +1,18 @@
+    void appointsuccess() {
+		setlinestyle(0,0,2);
+	dbox(350,200,400,700);
+	setcolor(GREEN);
+	setbkcolor(15);
+	settextstyle(4,0,3);
+	setlinestyle(1,0,3);
+	readimagefile("images/tickicon.jpg",625,220,725,320);
+     outtextxy(520,360,"you have successfully");
+	setbkcolor(15);
+	settextstyle(4,0,2);
+	outtextxy(530,410," made an appointment!");   
+	button(530,525,50,300);
+	settextstyle(4,0,2);
+	setbkcolor(CYAN);
+	setcolor(15);
+	outtextxy(615,535,"Continue");
+}

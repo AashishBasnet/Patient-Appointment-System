@@ -1,0 +1,79 @@
+# Project: Project2
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o patient.o pthome.o ptappoint.o ptabout.o cursorinput.o layouts.o admin.o doctor.o dthome.o ptlogin.o ptsignup.o ahome.o alogin.o ptdashboard.o dlogin.o adsignup.o dtabout.o
+LINKOBJ  = main.o patient.o pthome.o ptappoint.o ptabout.o cursorinput.o layouts.o admin.o doctor.o dthome.o ptlogin.o ptsignup.o ahome.o alogin.o ptdashboard.o dlogin.o adsignup.o dtabout.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -m32
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Project2.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+patient.o: patient.cpp
+	$(CPP) -c patient.cpp -o patient.o $(CXXFLAGS)
+
+pthome.o: pthome.cpp
+	$(CPP) -c pthome.cpp -o pthome.o $(CXXFLAGS)
+
+ptappoint.o: ptappoint.cpp
+	$(CPP) -c ptappoint.cpp -o ptappoint.o $(CXXFLAGS)
+
+ptabout.o: ptabout.cpp
+	$(CPP) -c ptabout.cpp -o ptabout.o $(CXXFLAGS)
+
+cursorinput.o: cursorinput.cpp
+	$(CPP) -c cursorinput.cpp -o cursorinput.o $(CXXFLAGS)
+
+layouts.o: layouts.cpp
+	$(CPP) -c layouts.cpp -o layouts.o $(CXXFLAGS)
+
+admin.o: admin.cpp
+	$(CPP) -c admin.cpp -o admin.o $(CXXFLAGS)
+
+doctor.o: doctor.cpp
+	$(CPP) -c doctor.cpp -o doctor.o $(CXXFLAGS)
+
+dthome.o: dthome.cpp
+	$(CPP) -c dthome.cpp -o dthome.o $(CXXFLAGS)
+
+ptlogin.o: ptlogin.cpp
+	$(CPP) -c ptlogin.cpp -o ptlogin.o $(CXXFLAGS)
+
+ptsignup.o: ptsignup.cpp
+	$(CPP) -c ptsignup.cpp -o ptsignup.o $(CXXFLAGS)
+
+ahome.o: ahome.cpp
+	$(CPP) -c ahome.cpp -o ahome.o $(CXXFLAGS)
+
+alogin.o: alogin.cpp
+	$(CPP) -c alogin.cpp -o alogin.o $(CXXFLAGS)
+
+ptdashboard.o: ptdashboard.cpp
+	$(CPP) -c ptdashboard.cpp -o ptdashboard.o $(CXXFLAGS)
+
+dlogin.o: dlogin.cpp
+	$(CPP) -c dlogin.cpp -o dlogin.o $(CXXFLAGS)
+
+adsignup.o: adsignup.cpp
+	$(CPP) -c adsignup.cpp -o adsignup.o $(CXXFLAGS)
+
+dtabout.o: dtabout.cpp
+	$(CPP) -c dtabout.cpp -o dtabout.o $(CXXFLAGS)

@@ -1,0 +1,42 @@
+    void attendance_list()  {
+    	hdbox(170,120,570,1050);
+setcolor(RED);
+setbkcolor(3);
+outtextxy(210,130,"Patient's attendance:");
+setcolor(LIGHTGRAY);
+setlinestyle(0,0,2);
+rectangle(200,270,1180,580);
+line(200,310,1180,310);
+line(360,271,360,580);
+char clists[50];
+int ycoord=0;
+setcolor(0);
+setbkcolor(15);
+for (int lists=0;lists<=11;lists++)
+{
+	sprintf(clists,"%d",lists+1);
+if (lists<9)
+{
+outtextxy(220,320+ycoord,"0");
+outtextxy(240,320+ycoord,clists);
+}
+else if(lists>=9)
+{
+	outtextxy(220,320+ycoord,clists);
+}
+outtextxy(375,320+ycoord,"patient name");
+ycoord+=20;
+}
+setcolor(0);
+setbkcolor(15);
+outtextxy(200,185,"Department:");
+outtextxy(800,185,"Date:");
+outtextxy(200,220,"shift:");
+setcolor(BLUE);
+outtextxy(210,280,"Token no");
+outtextxy(555,280,"Patient's Name");
+setcolor(15);
+setbkcolor(LIGHTBLUE);
+outtextxy(1005,640,"Confirm >");
+colorbutton(950,625,50,250,LIGHTBLUE);
+}

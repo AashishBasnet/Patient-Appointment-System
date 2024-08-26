@@ -1,0 +1,19 @@
+    void atention() {
+		setlinestyle(0,0,2);
+	dbox(350,200,400,700);
+	setcolor(BLUE);
+	setbkcolor(15);
+	settextstyle(4,0,3);
+	setlinestyle(1,0,3);
+	readimagefile("images/attention.jpg",625,220,725,320);
+     outtextxy(370,360,"you have alrerady made an appointment.");
+     	setcolor(0);
+	setbkcolor(15);
+	settextstyle(4,0,2);
+	outtextxy(500,410,"can't have 2 appointments!");   
+	button(530,525,50,300);
+	settextstyle(4,0,2);
+	setbkcolor(CYAN);
+	setcolor(15);
+	outtextxy(615,535,"Continue");
+}

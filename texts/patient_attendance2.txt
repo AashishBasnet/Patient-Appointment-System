@@ -1,0 +1,25 @@
+    void patient_attendance2() {
+    	
+hdbox(170,120,570,1050);
+setcolor(RED);
+setbkcolor(3);
+outtextxy(210,130,"Patient's attendance:");
+setcolor(0);
+setbkcolor(15);
+setcolor(LIGHTGRAY);
+textfield(480, 440, 50, 400);
+textfield(480, 360, 50, 400);
+button(530,525,50,300);
+colorbutton(950,625,50,250,LIGHTBLUE);
+	settextstyle(4,0,2);
+	setbkcolor(CYAN);
+	setcolor(15);
+	outtextxy(625,535,"Submit");
+		setbkcolor(LIGHTBLUE);
+	outtextxy(1005,640,"Confirm >");
+	setbkcolor(15);
+	  settextstyle(3, 0, 1);
+       setcolor(DARKGRAY);
+       outtextxy(480, 340, "Token number:");
+       outtextxy(480, 420, "Patient's name:");
+}

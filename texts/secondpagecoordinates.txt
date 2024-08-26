@@ -1,0 +1,6 @@
+token number(480,360,880,410);
+patient name(480,440,880,490);
+
+submit_button(530,525,830,575);
+
+confirm_button(950,625,1200,675);

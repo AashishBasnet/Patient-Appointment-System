@@ -1,0 +1,29 @@
+    void patient_attendance()  {
+    	hdbox(170,120,570,1050);
+setcolor(RED);
+setbkcolor(3);
+outtextxy(210,130,"Patient's attendance:");
+setcolor(0);
+setbkcolor(15);
+outtextxy(300,285,"Department:");
+outtextxy(405,365,"Date:");
+outtextxy(405,445,"shift:");
+setcolor(LIGHTGRAY);
+
+textfield(480,280,50,400);
+textfield(520,360,40,60);
+textfield(610,360,40,60);
+textfield(690,360,40,120);
+textfield(480, 440, 50, 400);
+outtextxy(530,370,"DD");
+outtextxy(615,370,"MM");
+outtextxy(695,370,"YYYY");
+
+
+	button(530,525,50,300);
+
+	settextstyle(4,0,2);
+	setbkcolor(CYAN);
+	setcolor(15);
+	outtextxy(615,535,"Continue");
+}
