@@ -11,6 +11,8 @@
 #include<ctime>
 #include<string>
 
+int DTHOME::pgno = 1;
+
 using namespace std;
 void DTHOME::dthome1() {
 	setfillstyle(1,WHITE);
@@ -52,7 +54,6 @@ int DTHOME::ptrecordfillclick(char drid[50]) {
     
   time_t currentTime = std::time(nullptr);
 tm* localTime = std::localtime(&currentTime);
-
 int atyear = localTime->tm_year + 1900;
 int atmonth = localTime->tm_mon + 1;
 int atday = localTime->tm_mday;
@@ -204,7 +205,8 @@ else if (
     (strcmp(ttime, "afternoon") == 0 && (athour < 14 || (athour == 14 && atminute < 30))) ||
     (strcmp(ttime, "evening") == 0 && (athour < 17 || (athour == 17 && atminute == 0)))
     )
-		/*		  else if  (
+    //you can change the conditions here in order to change the flow of the system 
+/*				  else if  (
     (strcmp(ttime, "morning") == 0 && athour < 7) ||
     (strcmp(ttime, "afternoon") == 0 && (athour < 12 )) ||
     (strcmp(ttime, "evening") == 0 && (athour < 15 || (athour == 15 && atminute < 15))) ||
@@ -250,7 +252,7 @@ else if (
             }
             }
             // for sidebar buttons click
-            if ((p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690) || (p.x >= 10 && p.x <= 137 && p.y >= 550 && p.y <= 601 )) {
+            if ((p.x >= 10 && p.x <= 137 && p.y >= 450 && p.y <= 501 ) || (p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690) || (p.x >= 10 && p.x <= 137 && p.y >= 550 && p.y <= 601 )) {
                 psigncondition = false;
                 return 2;
             }
@@ -261,6 +263,8 @@ else if (
             }
     }
 }
+
+
 
  void DTHOME::dthome2() {
 
@@ -377,6 +381,8 @@ mousebtndwn=false;
             // name
             if (p.x >= 480 && p.x <= 880 && p.y >= 440 && p.y <= 490) {
                 clickedtextfield(480,440,50,400);
+                setfillstyle(1,15);
+				  bar(501,506,920,522);
                 setfillstyle(1, WHITE);
                     bar(499, 584, 1000, 615);
                 text_input(480,440,50,400, pname);
@@ -385,6 +391,8 @@ mousebtndwn=false;
             // token no.
             if (p.x >= 480 && p.x <= 880 && p.y >= 360 && p.y <= 410) {
                 clickedtextfield(480, 360, 50, 400);
+                setfillstyle(1,15);
+				  bar(501,506,920,522);
                 setfillstyle(1, WHITE);
                 bar(499, 584, 1000, 615);
                 text_input(480, 360, 50, 400, ptkno);
@@ -395,6 +403,8 @@ mousebtndwn=false;
               clickedbutton(530,525, 50, 300);
                 setfillstyle(1, WHITE);
                 bar(499, 584, 1000, 615);
+                setfillstyle(1,15);
+				  bar(501,506,920,522);
                 delay(40);
                 button(530,525, 50, 300);
                 settextstyle(4,0,2);
@@ -468,6 +478,8 @@ mousebtndwn=false;
             //continue button
                if (p.x >= 950 && p.x <= 1200 && p.y >= 625 && p.y <= 675) {
                	clickedbutton(950,625,50,250);
+               	setfillstyle(1,15);
+				  bar(501,506,920,522);
                	setfillstyle(1, WHITE);
                 bar(499, 584, 1000, 615);
                 delay(40);
@@ -480,7 +492,7 @@ mousebtndwn=false;
 				return 1;
             }
             // for sidebar buttons click
-            if ((p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)) {
+            if ((p.x >= 10 && p.x <= 137 && p.y >= 450 && p.y <= 501 ) || (p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)) {
                 psigncondition = false;
             }
 
@@ -496,7 +508,7 @@ mousebtndwn=false;
 
 void DTHOME::attendance_list()
 {
-		    time_t currentTime = std::time(nullptr);
+	time_t currentTime = std::time(nullptr);
     tm* localTime = std::localtime(&currentTime);
 
     
@@ -553,23 +565,6 @@ setbkcolor(15);
         cerr << "Error opening file for reading" << endl;
     }
 
-
-/*
-for (int lists=0;lists<=11;lists++)
-{
-	sprintf(clists,"%d",lists+1);
-if (lists<9)
-{
-outtextxy(220,320+ycoord,"0");
-outtextxy(240,320+ycoord,clists);
-}
-else if(lists>=9)
-{
-	outtextxy(220,320+ycoord,clists);
-}
-outtextxy(375,320+ycoord,"patient name");
-ycoord+=20;
-}*/
 setcolor(0);
 setbkcolor(15);
 outtextxy(380,185,pdepartment);
@@ -615,7 +610,7 @@ mousebtndwn=false;
             }
             
             // for sidebar buttons click
-            if ((p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)) {
+            if ((p.x >= 10 && p.x <= 137 && p.y >= 450 && p.y <= 501 ) || (p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)) {
                 psigncondition = false;
             }
 
@@ -660,6 +655,285 @@ readimagefile("images/change.jpg",620,200,720,300);
      setbkcolor(LIGHTGRAY);
 }
 
+
+void DTHOME::viewpatientlist(int p)
+{
+    pgno = p;
+    settextstyle(4, 0, 2);
+    setbkcolor(LIGHTGRAY);
+    setcolor(CYAN);
+    outtextxy(570, 77, "   Records  ");
+    setbkcolor(15);
+    setcolor(RED);
+    outtextxy(570, 130, "Appointments");
+           char fileid[50];
+        char filename[100];
+        char filepassword[100];
+        char filedepartment[50];
+        char filedayshift[4][20];
+        char filetimeshift[2][20];
+            memset(fileid, '\0', sizeof(fileid));
+            memset(filename, '\0', sizeof(filename));
+            memset(filepassword, '\0', sizeof(filepassword));
+            memset(filedepartment, '\0', sizeof(filedepartment));
+             for (int c = 0; c < 4; c++) {
+                filedayshift[c][0] = '\0';
+            }
+
+            for (int c = 0; c < 2; c++) {
+                filetimeshift[c][0] = '\0';
+            }
+
+ifstream fin;
+    fin.open("doctor.bin", ios::in | ios::binary);
+    if (fin) {
+        while (fin.peek() != EOF) {
+            fin.getline(fileid, sizeof(fileid), '\0');
+            fin.getline(filename, sizeof(filename), '\0');
+            fin.getline(filepassword, sizeof(filepassword), '\0');
+            fin.getline(filedepartment, sizeof(filedepartment), '\0');
+            for (int i = 0; i < 4; ++i) {
+                fin.getline(filedayshift[i], sizeof(filedayshift[i]), '\0');
+                if (strcmp(filedayshift[i], "null") == 0) {
+                    filedayshift[i][0] = '\0';
+                }
+            }
+            for (int i = 0; i < 2; ++i) {
+                fin.getline(filetimeshift[i], sizeof(filetimeshift[i]), '\0');
+                if(strcmp(filetimeshift[i],"morning")==0)
+                {
+                strcpy(docshift[i],"7:00-11:00");	
+				}
+				else if(strcmp(filetimeshift[i],"afternoon")==0)
+                {
+                strcpy(docshift[i],"12:00-2:30");	
+				}
+				else{
+                strcpy(docshift[i],"3:15-5:00");	
+				}
+                if (strcmp(filetimeshift[i], "null") == 0) {
+                    filetimeshift[i][0] = '\0';
+                }
+            }
+            fin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+            if (strcmp(fileid, did) == 0) {
+                     strcpy(docdep,filedepartment);
+                     break;
+        }           
+            }
+        
+        fin.close();
+    } else {
+        cerr << "Error opening file for printing" << endl;}
+
+    char userId[50], firstName[50], phoneNumber[50], department[50], date[50], timeSlot[50], tkno[50];
+    bool ptst=false;
+    ifstream appointmentFile("appointments.bin", ios::in | ios::binary);
+
+    if (appointmentFile) {
+        vector<string> records;
+        string record;
+        
+        // Read all records from the file
+        while (getline(appointmentFile, record, '\n')) {
+            stringstream recordStream(record);
+            recordStream.getline(userId, sizeof(userId), '\0');
+            recordStream.getline(firstName, sizeof(firstName), '\0');
+            recordStream.getline(tkno, sizeof(tkno), '\0');
+            recordStream.getline(phoneNumber, sizeof(phoneNumber), '\0');
+            recordStream.getline(department, sizeof(department), '\0');
+            recordStream.getline(date, sizeof(date), '\0');
+            recordStream.getline(timeSlot, sizeof(timeSlot), '\0');
+            
+            // Add record to vector
+            for(int c=0;c<2;c++)
+            {
+            	if(strcmp(docshift[c],timeSlot)==0)
+            	{
+            		ptst=true;
+            		break;
+				}
+			}
+			if(!ptst)
+			{
+				ptst=false;
+			}
+            if(strcmp(department,docdep)==0 && ptst==true)
+            {
+            	records.push_back(string(userId) + '\0' + string(firstName) + '\0' + string(tkno) + '\0' + 
+                               string(phoneNumber) + '\0' + string(department) + '\0' + string(date) + '\0' + 
+                               string(timeSlot));
+			}      
+        }
+
+        appointmentFile.close();
+
+        if (!records.empty()) {
+            const int recordsPerPage = 3; 
+            int recordCount = 0; 
+            int startRecord = (pgno - 1) * recordsPerPage; 
+            int endRecord = startRecord + recordsPerPage; 
+
+            
+            if (startRecord < records.size()) {
+                setfillstyle(1, 15);
+                bar(200, 170, 1220, 670);
+
+              
+                int yOffset = 0; 
+                for (int i = startRecord; i < endRecord && i < records.size(); ++i) {
+                    stringstream recordStream(records[i]);
+                    recordStream.getline(userId, sizeof(userId), '\0');
+                    recordStream.getline(firstName, sizeof(firstName), '\0');
+                    recordStream.getline(tkno, sizeof(tkno), '\0');
+                    recordStream.getline(phoneNumber, sizeof(phoneNumber), '\0');
+                    recordStream.getline(department, sizeof(department), '\0');
+                    recordStream.getline(date, sizeof(date), '\0');
+                    recordStream.getline(timeSlot, sizeof(timeSlot), '\0');
+                    
+                    int displayY = (i % recordsPerPage) * 160; // 160 pixels between records
+                    dbox(210, 190 + displayY, 140, 1000);
+                    setcolor(BLUE);
+                    setbkcolor(15);
+                    settextstyle(4, 0, 1);
+                    outtextxy(230, 200 + displayY, "PATIENT'S NAME:");
+                    outtextxy(230, 240 + displayY, "APPOINTMENT DATE:");
+                    outtextxy(230, 280 + displayY, "CONTACT:");
+                    setcolor(0);
+                    outtextxy(550, 200 + displayY, firstName);
+                    outtextxy(550, 240 + displayY, date);
+                    outtextxy(550, 280 + displayY, phoneNumber);
+                    recordCount++;
+                }
+
+                // Display navigation buttons and page number
+                setcolor(0);
+                if (pgno > 1) {
+                    outtextxy(580, 690, "prev");
+                }
+                if (endRecord < records.size()) {
+                    outtextxy(690, 690, "next");
+                }
+                setcolor(CYAN);
+                char pageNumber[10];
+                sprintf(pageNumber, "%d", pgno);
+                outtextxy(650, 690, pageNumber);
+            } 
+        } else {
+            // Handle case where no records are found
+            setfillstyle(1, 15);
+            bar(200, 170, 1220, 670);
+                  dbox(350, 200, 400, 700);
+                 readimagefile("images/attention.jpg", 650, 320, 750, 420);
+            setcolor(BLUE);
+            settextstyle(4, 0, 3);
+            outtextxy(510, 470, "No current appointments");
+            outtextxy(530, 510,"   have taken place.");
+        }
+    } else {
+        cerr << "Error opening file" << endl;
+    }
+}
+
+void DTHOME::viewpatientlistclick()
+{
+	 hshowButtons=false;
+   	hcondition= true;
+	hmouseButtonDown=false;
+   while (hcondition) {
+            POINT p;
+            GetCursorPos(&p);
+            ScreenToClient(GetForegroundWindow(), &p);
+
+            // Check if the left mouse button is pressed
+            if ((GetAsyncKeyState(VK_LBUTTON) & 0x8000) && !hmouseButtonDown) {
+                hmouseButtonDown = true;
+
+  // Check if the click is user icon
+                if (p.x >= 1202 && p.x <= 1250 && p.y >= 30 && p.y <= 80) {
+                    hshowButtons = !hshowButtons;
+                    HdisplayButtons();
+                }
+                
+            //prev
+            if (p.x >= 580 && p.x <= 635 && p.y >= 690 && p.y <= 710)  {
+            	hshowButtons=false;
+            	HdisplayButtons();
+                cout << "this is previous"<<endl;
+                if (pgno>1)
+                {
+                 pgno--;
+                }
+                if(pgno ==1)
+                {
+                	setfillstyle(1,WHITE);
+                	bar(578,688,640,740);
+				}
+                 viewpatientlist(pgno);
+                 prevclick=true;
+           }
+           
+           //next
+             if (p.x>= 690 && p.x <= 800 && p.y >= 635 && p.y <= 710) {
+             	hshowButtons=false;
+             	HdisplayButtons();
+                 cout << "this is next"<<endl;
+                 int maxPage = getptMaxPageNumber();
+                 if (pgno<maxPage)
+                 {
+                pgno++;
+            }
+               viewpatientlist(pgno);
+                nextclick=true;
+                
+      }
+                                                              
+          // for sidebar buttons click
+            if (((p.x >= 10 && p.x <= 137 && p.y >= 450 && p.y <= 501 )|| p.x >= 25 && p.x <= 130 && p.y >=180 && p.y <= 220) || (p.x >= 25 && p.x <= 120 && p.y >= 350 && p.y <= 390) ||  (p.x >= 25 && p.x <= 140 && p.y >= 450 && p.y <= 490) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)|| (p.x >= 25 && p.x <= 120 && p.y >= 550 && p.y <= 610)) {
+               hcondition = false;
+            }         
+       
+            } 
+
+            // Check if the left mouse button is released
+            if (!(GetAsyncKeyState(VK_LBUTTON) & 0x8000)) {
+                hmouseButtonDown = false;
+            }
+        }
+}
+
+
+// for max page number so that next button wont click
+int DTHOME::getptMaxPageNumber() {
+    fstream finout;
+    finout.open("patient.bin", ios::in | ios::binary);
+
+    if (finout) {
+        int totalRecords = 0;
+        char fileusername[50];
+        char filename[100];
+        char filephonenumber[20];
+        char filepassword[100];
+
+        while (finout.read(fileusername, sizeof(fileusername))) {
+            finout.read(filename, sizeof(filename));
+            finout.read(filephonenumber, sizeof(filephonenumber));
+            finout.read(filepassword, sizeof(filepassword));
+            finout.ignore(1);
+            totalRecords++;
+        }
+        
+        finout.close();
+
+        const int recordsPerPage = 3; 
+        int maxPageNumber = (totalRecords + recordsPerPage - 1) / recordsPerPage; 
+        return maxPageNumber;
+    } else {
+        cerr << "Error opening file to calculate max page number" << endl;
+        return 1; 
+    }
+}
 
 
 
@@ -820,7 +1094,7 @@ mousebtndwn=false;
 	       
 	       
             // for sidebar buttons click
-            if ((p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)) {
+            if ((p.x >= 10 && p.x <= 137 && p.y >= 450 && p.y <= 501 ) || (p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 10 && p.x <= 120 && p.y >= 350 && p.y <= 390) || (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690)) {
                 psigncondition = false;
             }
 
@@ -832,4 +1106,18 @@ mousebtndwn=false;
             }
     }
  }
+ 
+ void DTHOME::HdisplayButtons() {
+        if (hshowButtons) {
+           setcolor(RED);
+           setbkcolor(LIGHTGRAY);
+		   settextstyle(4,0,1);
+           outtextxy(1000,35,"Hello");
+            outtextxy(1000,60,did);
+        } else {
+            setfillstyle(1,LIGHTGRAY);
+            bar(1000, 0, 1200, 100);
+        }
+    }
+
 

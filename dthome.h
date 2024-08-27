@@ -10,8 +10,11 @@ class DTHOME {
 	char did[50];
 	int tk[25];
 	char newpassword[100], connewpassword[100];
-	char docdep[50],docpass[100];
+	char docdep[50],docpass[100], docshift[2][50];
      char patdep[50];
+     static int pgno;
+     bool prevclick,nextclick;
+     bool hshowButtons,hcondition, hmouseButtonDown;
 public:
     // Declarations for HOME class
     void dthome1();
@@ -24,6 +27,10 @@ public:
     int attendance_listclick();
     void changepassword(char []);
     void changepasswordclick();
+    int getptMaxPageNumber();
+        void viewpatientlist(int);
+    void viewpatientlistclick();
+    void HdisplayButtons();
 	};
 
 #endif // HOME_H

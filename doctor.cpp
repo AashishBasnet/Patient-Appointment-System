@@ -30,6 +30,8 @@ setcolor(15);
     outtextxy(10,350,"About Doc");
     outtextxy(10,550,"Change");
     outtextxy(10,570,"Password");
+    outtextxy(10,450,"Patient");
+    outtextxy(10,470,"Attended");
     setcolor(RED);
     outtextxy(25,650,"Logout");
 setcolor(15);
@@ -117,6 +119,21 @@ bool DOCTOR::click() {
                     changepassword(docid);
                     changepasswordclick();
                 }
+                
+                
+                                 //patient attended today
+                if (p.x >= 10 && p.x <= 137 && p.y >= 450 && p.y <= 501 ){
+                    showButtons = false;
+                    displayButtons();
+                    setfillstyle(1,WHITE);
+                    bar(151,101,1280,720);
+                    setfillstyle(1,LIGHTGRAY);
+                    bar(589,77,750,98);
+                    viewpatientlist(1);
+                    viewpatientlistclick();
+                }
+                
+                
                 
                                 //logout
                 if (p.x >= 25 && p.x <= 115 && p.y >= 650 && p.y <= 690) {
